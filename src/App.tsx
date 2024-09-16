@@ -11,7 +11,7 @@ const App = () => {
 
     const dealCards = () => {
         const deck = new CardDeck();
-        const dealtCards = deck.getCards(4);
+        const dealtCards = deck.getCards(5);
         setHand(dealtCards);
     }
 
@@ -24,11 +24,11 @@ const App = () => {
             <button onClick={dealCards}>Deal the cards</button>
             <div className="playingCards faceImages">
                 {hand.map((card, index) => (
-                    <span key={index} className={`${card.rank} ${card.suit}`}>
+                    <span key={index} className={`card rank-${card.rank} ${card.suit}`}>
                         <span className="rank">{card.rank}</span>
                         <span className="suit">{card.suit}</span>
                     </span>
-                ))};
+                ))}
             </div>
         </div>
     );

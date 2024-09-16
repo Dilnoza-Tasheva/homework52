@@ -1,17 +1,17 @@
 import gameCard from './gameCard.ts';
 
 class CardDeck {
-    constructor(private deck: gameCard[]) {
-        this.deck = [];
-        this.ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-        this.suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
+        private deck: Card[] = [];
+        private ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+        private suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
 
-        for (const suit of this.suits) {
-            for (const rank of this.ranks) {
-                this.deck.push(new gameCard(rank, suit));
+        constructor() {
+            for (const suit of this.suits) {
+                for (const rank of this.ranks) {
+                    this.deck.push(new gameCard(rank, suit));
+                }
             }
         }
-    }
 
     getCard(): gameCard {
         const randomIndex = Math.floor(Math.random() * this.deck.length);
