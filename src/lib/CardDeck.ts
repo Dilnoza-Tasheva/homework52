@@ -6,8 +6,8 @@ class CardDeck {
         this.ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
         this.suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
 
-        for (const suit of this.suit) {
-            for (const rank of this.rank) {
+        for (const suit of this.suits) {
+            for (const rank of this.ranks) {
                 this.deck.push(new gameCard(rank, suit));
             }
         }
